@@ -1,0 +1,16 @@
+.chat {
+  background: #add8e6;
+
+  > .messages {
+    height: 200px;
+    overflow-y: auto;
+
+    > .container {
+      background: #deffde;
+    }
+  }
+
+  > form {
+    background: #ffc0cb;
+  }
+}

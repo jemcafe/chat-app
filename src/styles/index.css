@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: center; }
+
+textarea {
+  resize: none; }
+
+.login {
+  background: #ffd7c0; }
+
+.chat {
+  background: #add8e6; }
+  .chat > .messages {
+    height: 200px;
+    overflow-y: auto; }
+    .chat > .messages > .container {
+      background: #deffde; }
+  .chat > form {
+    background: #ffc0cb; }
