@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 class Chat extends Component {
   constructor () {
@@ -7,31 +7,49 @@ class Chat extends Component {
       messages: [
         {
           username: 'Howard',
+          avatar: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Beagle_puppy%27s_head.png',
+          message: 'This is a message that has been written by the person who is logged in, which is me Howard.',
+          date: 'May 22, 2018'
+        },
+        {
+          username: 'Jess',
+          avatar: 'http://g01.a.alicdn.com/kf/HTB1PBLpLpXXXXbuXVXXq6xXFXXX1/New-Patchwork-Diamond-Embroidery-font-b-Lion-b-font-Head-font-b-Drawings-b-font-Diamond.jpg',
+          message: 'This is a message that has been written by the person who is logged in, which is me Jess.',
+          date: 'May 22, 2018'
+        },
+        {
+          username: 'Howard',
+          avatar: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Beagle_puppy%27s_head.png',
           message: 'This is a message that has been written by the person who is logged in, which is me Howard.',
           date: 'May 22, 2018'
         },
         {
           username: 'Howard',
+          avatar: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Beagle_puppy%27s_head.png',
           message: 'This is a message that has been written by the person who is logged in, which is me Howard.',
           date: 'May 22, 2018'
         },
         {
           username: 'Howard',
+          avatar: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Beagle_puppy%27s_head.png',
+          message: 'This is a message that has been written by the person who is logged in, which is me Howard.',
+          date: 'May 22, 2018'
+        },
+        {
+          username: 'Jess',
+          avatar: 'http://g01.a.alicdn.com/kf/HTB1PBLpLpXXXXbuXVXXq6xXFXXX1/New-Patchwork-Diamond-Embroidery-font-b-Lion-b-font-Head-font-b-Drawings-b-font-Diamond.jpg',
+          message: 'This is a message that has been written by the person who is logged in, which is me Jess.',
+          date: 'May 22, 2018'
+        },
+        {
+          username: 'Howard',
+          avatar: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Beagle_puppy%27s_head.png',
           message: 'This is a message that has been written by the person who is logged in, which is me Howard.',
           date: 'May 22, 2018'
         },
         {
           username: 'Howard',
-          message: 'This is a message that has been written by the person who is logged in, which is me Howard.',
-          date: 'May 22, 2018'
-        },
-        {
-          username: 'Howard',
-          message: 'This is a message that has been written by the person who is logged in, which is me Howard.',
-          date: 'May 22, 2018'
-        },
-        {
-          username: 'Howard',
+          avatar: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Beagle_puppy%27s_head.png',
           message: 'This is a message that has been written by the person who is logged in, which is me Howard.',
           date: 'May 22, 2018'
         }
@@ -58,23 +76,32 @@ class Chat extends Component {
 
     return (
       <div className="chat">
-        <div>
-          HEADER
+        <div className="header">
+          <div className="receiver">
+            <div className="online-indicator"></div>
+            Recipient's Name
+          </div>
+          <div><i className="fas fa-times"></i></div>
         </div>
         <div ref="messages" className="messages">
-          <div className="container">
+          <ul className="container">
             { messages.map((e, i) => (
-              <Fragment key={i}>
+              <li key={i}>
+                <div style={{width:'30px',height:'30px',background:`url(${e.avatar}) 0% 0% / contain)`}}></div>
                 <div>{ e.username }:</div>
-                <div>{ e.message }</div>
+                <div className="message">{ e.message }</div>
                 <div>{ e.date }</div>
-              </Fragment>
+              </li>
             )) }
-          </div>
+          </ul>
         </div>
         <form onSubmit={(e) => e.preventDefault()}>
           <textarea placeholder="Message..." value={message} onChange={(e) => this.handleChange('message', e.target.value)}></textarea>
-          <input className="btn" type="submit" value="Send"/>
+          <div>
+            {/* <input className="btn" type="submit" value="Send"/> */}
+            <button><i className="far fa-smile"></i></button>
+            <button type="submit"><i className="fas fa-paper-plane"></i></button>
+          </div>
         </form>
       </div>
     );

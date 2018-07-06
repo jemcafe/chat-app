@@ -16,8 +16,8 @@ class Login extends Component {
     return (
       <div className="login">
         <form onSubmit={(e) => e.preventDefault()}>
-          <input placeholder="Username" value={username} onChange={(e) => this.handleChange('username', e.target.value)}/>
-          <input type="submit" value="Login"/>
+          <input className="input" placeholder="Username" value={username} onChange={(e) => this.handleChange('username', e.target.value)}/>
+          <div><input className="btn" type="submit" value="Login"/></div>
         </form>
       </div>
     );

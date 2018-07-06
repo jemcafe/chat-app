@@ -4,18 +4,116 @@ body {
   font-family: sans-serif;
   text-align: center; }
 
+input, textarea {
+  outline: none;
+  font-size: 14px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  padding: 4px; }
+  input:focus, textarea:focus {
+    border-color: #8aacf7; }
+
 textarea {
   resize: none; }
 
+::placeholder {
+  color: #c5d1dd; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.btn {
+  outline: none;
+  border: none;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #fff;
+  background: #6b5ee4;
+  border-radius: 4px;
+  cursor: pointer; }
+
 .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background: #ffd7c0; }
+  .login form > input {
+    border: none;
+    border-bottom: 1px solid #6b5ee4;
+    border-radius: 0;
+    background: transparent; }
+  .login form > div {
+    margin: 30px 0 0 0; }
 
 .chat {
-  background: #add8e6; }
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 300px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  color: gray; }
+  .chat > .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    color: #fff;
+    background: #808cff;
+    background-image: linear-gradient(-45deg, #808cff, #6b5ee4); }
+    .chat > .header .receiver {
+      display: flex;
+      align-items: center; }
+      .chat > .header .receiver .online-indicator {
+        margin: 0 6px 0 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #64ff64; }
+    .chat > .header > div {
+      color: #fff;
+      cursor: pointer; }
+      .chat > .header > div:active {
+        color: #cdd2ff; }
   .chat > .messages {
-    height: 200px;
+    height: 250px;
     overflow-y: auto; }
     .chat > .messages > .container {
-      background: #deffde; }
+      padding: 10px;
+      box-sizing: border-box;
+      background: #e8f0ff; }
+    .chat > .messages .message {
+      text-align: left;
+      padding: 12px;
+      box-sizing: border-box;
+      border-radius: 6px;
+      background: #fff; }
   .chat > form {
-    background: #ffc0cb; }
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+    box-sizing: border-box;
+    border-top: 1px solid #c5d1dd;
+    border-right: 1px solid #b0b8ff;
+    border-bottom: 1px solid #b0b8ff;
+    border-left: 1px solid #b0b8ff;
+    border-radius: 0 0 6px 6px; }
+    .chat > form textarea {
+      flex: 1;
+      border: 2px solid #fff; }
+      .chat > form textarea:focus {
+        border-color: #b0b8ff; }
+    .chat > form > div > button {
+      font-size: 22px;
+      color: #808cff;
+      outline: none;
+      border: none;
+      background: transparent;
+      cursor: pointer; }
+      .chat > form > div > button:active {
+        color: #b0b8ff; }

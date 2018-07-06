@@ -5,6 +5,22 @@ body {
   text-align: center;
 }
 
-textarea {
-  resize: none;
+input, textarea {
+  outline: none;
+  font-size: 14px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  padding: 4px;
+
+  &:focus { border-color: #8aacf7; }
+}
+
+textarea { resize: none; }
+
+::placeholder { color: #c5d1dd; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }

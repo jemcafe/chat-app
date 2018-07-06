@@ -1,3 +1,20 @@
 .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background: rgb(255, 215, 192);
+
+  form {
+    > input {
+      border: none;
+      border-bottom: 1px solid $purple;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    > div {
+      margin: 30px 0 0 0;
+    }
+  }
 }
