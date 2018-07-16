@@ -1,0 +1,112 @@
+#chat > .room {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 300px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+
+  > .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    color: #fff;
+    background: $blueLilac;
+    background-image: $headerGrad;
+
+    .receiver {
+      display: flex;
+      align-items: center;
+
+      .online-indicator {  // circle icon
+        margin: 0 10px 0 0;
+        width: 10px;
+        height: 10px;
+        border: 1px solid $lightBlueLilac;
+        border-radius: 50%;
+        background-image: $onlineIndicatorGrad;
+      }
+    }
+
+    > .close-icon {  // times icon
+      color: #fff;
+      opacity: 0.8;
+      cursor: pointer;
+      &:hover { opacity: 1; }
+    }
+  }
+
+  > .messages {
+    height: 250px;
+    overflow-y: auto;
+    letter-spacing: 0;
+    color: $blueText;
+
+    > .container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      box-sizing: border-box;
+      background: $coolWhite;
+
+      > li {  // List of messages
+        display: flex;
+        align-items: flex-start;
+        padding: 10px 0;
+      }
+    }
+
+    .avatar {
+      align-self: flex-end;
+      min-width: 30px;
+      min-height: 30px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .message {
+      font-size: 14px;
+      text-align: left;
+      padding: 12px;
+      box-sizing: border-box;
+      border-radius: 6px;
+      margin: 0 10px;
+      background: #fff;
+    }
+  }
+
+  > form {
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+    box-sizing: border-box;
+    border-top: 1px solid #c5d1dd;
+    border-right: 1px solid $lightBlueLilac;
+    border-bottom: 1px solid $lightBlueLilac;
+    border-left: 1px solid $lightBlueLilac;
+    border-radius: 0 0 6px 6px;
+
+    textarea {
+      flex: 1;
+      border: 2px solid #fff;
+      margin: 0 4px 0 0;
+      &:focus {
+        border-color: $lightBlueLilac;
+      }
+    }
+
+    > div > button {
+      outline: none;
+      border: none;
+      font-size: 22px;
+      padding: 0;
+      margin: 0 4px;
+      color: $blueLilac;
+      background: transparent;
+      cursor: pointer;
+      &:active { color: $lightBlueLilac }
+    }
+  }
+}

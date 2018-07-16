@@ -1,4 +1,9 @@
-$purple: #6b5ee4;
-$blueLilac: #808cff;
-$lightBlueLilac: #b0b8ff;
-$onlineGreen: #64ff64;
+$blue: #5e76e4;
+$blueLilac: #80acff;
+$lightBlueLilac: #b0ccff;
+$coolWhite: #e8f0ff;
+
+$blueText: #707aa8;
+
+$headerGrad: linear-gradient(-45deg, $blueLilac, $blue);
+$onlineIndicatorGrad: radial-gradient(180deg, #fff, #90ff64, #218866);

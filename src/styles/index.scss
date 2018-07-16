@@ -1,8 +1,14 @@
 @import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/placeholders';
 
 @import 'base/base';
 
-@import 'modules/all';
+@import 'modules/buttons';
+@import 'modules/inputs';
 
+@import 'components/App';
 @import 'components/Login';
 @import 'components/Chat';
+@import 'components/RoomList';
+@import 'components/Room';

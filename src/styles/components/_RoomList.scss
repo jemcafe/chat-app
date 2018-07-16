@@ -1,0 +1,45 @@
+#chat > .room-list {
+  display: flex;
+  flex-direction: column;
+  background: $coolWhite;
+  border-right: 1px solid $blueLilac;
+
+  > h3 {
+    padding: 8px 50px;
+    color: #fff;
+    background: $blue;
+    background-image: $headerGrad;
+  }
+
+  .rooms {
+    overflow-y: auto;
+  }
+
+  .room {
+    padding: 12px;
+    color: $blueText;
+    border-top: 1px solid $lightBlueLilac;
+    background: $coolWhite;
+    @include user-select(none);
+    animation: 'hover-out' 0.4s;
+    &:hover {
+      background: #fff;
+      animation: 'hover-in' 0.4s;
+    }
+  }
+
+  .footer {
+    padding: 12px;
+    border-top: 1px solid $blueLilac;
+    background: #fff;
+  }
+}
+
+@keyframes hover-in {
+  0% { background: $coolWhite; }
+  100% { background: white; }
+}
+@keyframes hover-out {
+  0% { background: white; }
+  100% { background: $coolWhite; }
+}

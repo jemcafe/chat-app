@@ -1,11 +1,57 @@
 .btn {
   outline: none;
   border: none;
-  padding: 8px 12px;
-  box-sizing: border-box;
   font-size: 14px;
   color: #fff;
-  background: $purple;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  background: $blue;
   border-radius: 4px;
-  cursor: pointer;
+}
+
+.btn-2 {
+  outline: none;
+  border: none;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  color: #fff;
+  background: $lightBlueLilac;
+  animation: 'btn-2-r' 0.5s;
+  &:hover {
+    color: #fff;
+    background: $blueLilac;
+    animation: 'btn-2-f' 0.5s; }
+}
+@keyframes btn-2-f {
+  0% { color: #fff; background: $lightBlueLilac; }
+  100% { color: #fff; background: $blueLilac; }
+}
+@keyframes btn-2-r {
+  0% { color: #fff; background: $blueLilac; }
+  100% { color: #fff; background: $lightBlueLilac; }
+}
+
+.btn-3 {
+  font-weight: bold;
+  outline: none;
+  font-size: 18px;
+  padding: 12px 20px;
+  border: 2px solid $blueLilac;
+  border-radius: 30px;
+  color: $blueLilac;
+  background: transparent;
+  animation: 'btn-3-r' 0.5s;
+  &:hover {
+    color: #fff;
+    background: $blueLilac;
+    animation: 'btn-3-f' 0.5s; }
+}
+@keyframes btn-3-f {
+  0% { color: $blueLilac; background: transparent; }
+  100% { color: #fff; background: $blueLilac; }
+}
+@keyframes btn-3-r {
+  0% { color: #fff; background: $blueLilac; }
+  100% { color: $blueLilac; background: transparent; }
 }

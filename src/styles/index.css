@@ -1,8 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  text-align: center; }
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  letter-spacing: 1px; }
+
+h1, h2, h3, h4, h5, h6 {
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  font-weight: normal; }
 
 input, textarea {
   outline: none;
@@ -24,16 +31,85 @@ ul {
   padding: 0;
   list-style-type: none; }
 
+button {
+  outline: none;
+  border: none;
+  cursor: pointer; }
+
 .btn {
   outline: none;
   border: none;
-  padding: 8px 12px;
-  box-sizing: border-box;
   font-size: 14px;
   color: #fff;
-  background: #6b5ee4;
-  border-radius: 4px;
-  cursor: pointer; }
+  padding: 8px 12px;
+  box-sizing: border-box;
+  background: #5e76e4;
+  border-radius: 4px; }
+
+.btn-2 {
+  outline: none;
+  border: none;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  color: #fff;
+  background: #b0ccff;
+  animation: 'btn-2-r' 0.5s; }
+  .btn-2:hover {
+    color: #fff;
+    background: #80acff;
+    animation: 'btn-2-f' 0.5s; }
+
+@keyframes btn-2-f {
+  0% {
+    color: #fff;
+    background: #b0ccff; }
+  100% {
+    color: #fff;
+    background: #80acff; } }
+
+@keyframes btn-2-r {
+  0% {
+    color: #fff;
+    background: #80acff; }
+  100% {
+    color: #fff;
+    background: #b0ccff; } }
+
+.btn-3 {
+  font-weight: bold;
+  outline: none;
+  font-size: 18px;
+  padding: 12px 20px;
+  border: 2px solid #80acff;
+  border-radius: 30px;
+  color: #80acff;
+  background: transparent;
+  animation: 'btn-3-r' 0.5s; }
+  .btn-3:hover {
+    color: #fff;
+    background: #80acff;
+    animation: 'btn-3-f' 0.5s; }
+
+@keyframes btn-3-f {
+  0% {
+    color: #80acff;
+    background: transparent; }
+  100% {
+    color: #fff;
+    background: #80acff; } }
+
+@keyframes btn-3-r {
+  0% {
+    color: #fff;
+    background: #80acff; }
+  100% {
+    color: #80acff;
+    background: transparent; } }
+
+.App {
+  display: flex;
+  height: 100vh; }
 
 .login {
   display: flex;
@@ -43,77 +119,146 @@ ul {
   background: #ffd7c0; }
   .login form > input {
     border: none;
-    border-bottom: 1px solid #6b5ee4;
+    border-bottom: 1px solid #5e76e4;
     border-radius: 0;
     background: transparent; }
   .login form > div {
     margin: 30px 0 0 0; }
 
-.chat {
+#chat {
+  display: flex; }
+
+#chat > .room-list {
+  display: flex;
+  flex-direction: column;
+  background: #e8f0ff;
+  border-right: 1px solid #80acff; }
+  #chat > .room-list > h3 {
+    padding: 8px 50px;
+    color: #fff;
+    background: #5e76e4;
+    background-image: linear-gradient(-45deg, #80acff, #5e76e4); }
+  #chat > .room-list .rooms {
+    overflow-y: auto; }
+  #chat > .room-list .room {
+    padding: 12px;
+    color: #707aa8;
+    border-top: 1px solid #b0ccff;
+    background: #e8f0ff;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+    animation: 'hover-out' 0.4s; }
+    #chat > .room-list .room:hover {
+      background: #fff;
+      animation: 'hover-in' 0.4s; }
+  #chat > .room-list .footer {
+    padding: 12px;
+    border-top: 1px solid #80acff;
+    background: #fff; }
+
+@keyframes hover-in {
+  0% {
+    background: #e8f0ff; }
+  100% {
+    background: white; } }
+
+@keyframes hover-out {
+  0% {
+    background: white; }
+  100% {
+    background: #e8f0ff; } }
+
+#chat > .room {
   position: fixed;
   right: 20px;
   bottom: 20px;
   width: 300px;
   border-radius: 6px;
   overflow: hidden;
-  background: #fff;
-  color: gray; }
-  .chat > .header {
+  background: #fff; }
+  #chat > .room > .header {
     display: flex;
     justify-content: space-between;
     padding: 12px 14px;
     box-sizing: border-box;
     color: #fff;
-    background: #808cff;
-    background-image: linear-gradient(-45deg, #808cff, #6b5ee4); }
-    .chat > .header .receiver {
+    background: #80acff;
+    background-image: linear-gradient(-45deg, #80acff, #5e76e4); }
+    #chat > .room > .header .receiver {
       display: flex;
       align-items: center; }
-      .chat > .header .receiver .online-indicator {
-        margin: 0 6px 0 0;
+      #chat > .room > .header .receiver .online-indicator {
+        margin: 0 10px 0 0;
         width: 10px;
         height: 10px;
+        border: 1px solid #b0ccff;
         border-radius: 50%;
-        background: #64ff64; }
-    .chat > .header > div {
+        background-image: radial-gradient(180deg, #fff, #90ff64, #218866); }
+    #chat > .room > .header > .close-icon {
       color: #fff;
+      opacity: 0.8;
       cursor: pointer; }
-      .chat > .header > div:active {
-        color: #cdd2ff; }
-  .chat > .messages {
+      #chat > .room > .header > .close-icon:hover {
+        opacity: 1; }
+  #chat > .room > .messages {
     height: 250px;
-    overflow-y: auto; }
-    .chat > .messages > .container {
+    overflow-y: auto;
+    letter-spacing: 0;
+    color: #707aa8; }
+    #chat > .room > .messages > .container {
+      display: flex;
+      flex-direction: column;
       padding: 10px;
       box-sizing: border-box;
       background: #e8f0ff; }
-    .chat > .messages .message {
+      #chat > .room > .messages > .container > li {
+        display: flex;
+        align-items: flex-start;
+        padding: 10px 0; }
+    #chat > .room > .messages .avatar {
+      align-self: flex-end;
+      min-width: 30px;
+      min-height: 30px;
+      border-radius: 50%;
+      background: #fff; }
+    #chat > .room > .messages .message {
+      font-size: 14px;
       text-align: left;
       padding: 12px;
       box-sizing: border-box;
       border-radius: 6px;
+      margin: 0 10px;
       background: #fff; }
-  .chat > form {
+  #chat > .room > form {
     display: flex;
     align-items: flex-end;
     padding: 12px;
     box-sizing: border-box;
     border-top: 1px solid #c5d1dd;
-    border-right: 1px solid #b0b8ff;
-    border-bottom: 1px solid #b0b8ff;
-    border-left: 1px solid #b0b8ff;
+    border-right: 1px solid #b0ccff;
+    border-bottom: 1px solid #b0ccff;
+    border-left: 1px solid #b0ccff;
     border-radius: 0 0 6px 6px; }
-    .chat > form textarea {
+    #chat > .room > form textarea {
       flex: 1;
-      border: 2px solid #fff; }
-      .chat > form textarea:focus {
-        border-color: #b0b8ff; }
-    .chat > form > div > button {
-      font-size: 22px;
-      color: #808cff;
+      border: 2px solid #fff;
+      margin: 0 4px 0 0; }
+      #chat > .room > form textarea:focus {
+        border-color: #b0ccff; }
+    #chat > .room > form > div > button {
       outline: none;
       border: none;
+      font-size: 22px;
+      padding: 0;
+      margin: 0 4px;
+      color: #80acff;
       background: transparent;
       cursor: pointer; }
-      .chat > form > div > button:active {
-        color: #b0b8ff; }
+      #chat > .room > form > div > button:active {
+        color: #b0ccff; }
