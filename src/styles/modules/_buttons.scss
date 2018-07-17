@@ -7,6 +7,7 @@
   box-sizing: border-box;
   background: $blue;
   border-radius: 4px;
+  &:active { background: $blueLilac; }
 }
 
 .btn-2 {

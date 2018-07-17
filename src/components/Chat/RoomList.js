@@ -44,9 +44,7 @@ class RoomList extends Component {
         <h3>Chat Rooms</h3>
         <ul className="rooms">
           { this.state.rooms.map((e, i) => (
-            <li key={e.id} className="room">
-              {e.name} {e.id}
-            </li>
+            <li key={e.id} className="room">{e.name} {e.id}</li>
           )) }
         </ul>
         <div className="footer">

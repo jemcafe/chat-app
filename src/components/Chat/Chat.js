@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Logout from './Logout';
 import RoomList from './RoomList';
 import Room from './Room';
 
@@ -12,6 +13,7 @@ class Chat extends Component {
   render() {
     return (
       <div id="chat">
+        <Logout />
         <RoomList />
         <Room />
       </div>

@@ -45,6 +45,8 @@ button {
   box-sizing: border-box;
   background: #5e76e4;
   border-radius: 4px; }
+  .btn:active {
+    background: #80acff; }
 
 .btn-2 {
   outline: none;
@@ -107,16 +109,12 @@ button {
     color: #80acff;
     background: transparent; } }
 
-.App {
-  display: flex;
-  height: 100vh; }
-
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #ffd7c0; }
+  border: 1px dashed gray; }
   .login form > input {
     border: none;
     border-bottom: 1px solid #5e76e4;
@@ -125,8 +123,15 @@ button {
   .login form > div {
     margin: 30px 0 0 0; }
 
+.logout {
+  position: fixed;
+  top: 20px;
+  right: 20px; }
+
 #chat {
-  display: flex; }
+  display: flex;
+  height: 100vh;
+  border: 1px dashed gray; }
 
 #chat > .room-list {
   display: flex;
